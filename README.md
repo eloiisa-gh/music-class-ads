@@ -75,13 +75,14 @@ Output:
 Clicking the [http://127.0.0.1:8000](https://8000-cs-331008850888-default.cs-us-east1-dogs.cloudshell.dev/dev-ui/) link, open the ADK Dev UI. 
 From the 'Select an agent' dropdown on the left, select 'illustration_agent' from the dropdown.
 
-
+![illustration agent](https://github.com/eloiisa-gh/adk_and_a2a/blob/main/ADK_and_A2A_img01.png?raw)
 Query the agent with some text that could be used in a recruitment slide deck:
 ```
 By supporting each other, we get big things done!
 ```
 
 Resulting image:
+![illustration agent result](https://github.com/eloiisa-gh/adk_and_a2a/blob/main/ADK_and_A2A_sample_0.png?raw)
 
 Use `adk deploy cloud_run` with the `--a2a` flag to deploy your agent to Cloud Run as an A2A server.
 - the `--project` and `--region` define the project and region in which the Cloud Run service will be deployed
@@ -106,6 +107,16 @@ Service URL: https://illustration-agent-ProjectNumber.GCP_LOCATION.run.app
 ```
 
 4. Enable another ADK agent to call this agent remotely
+Launch the UI from the Cloud Shell Terminal with:
+```
+cd ~/adk_and_a2a
+adk web
+```
+
+Click the [http://127.0.0.1:8000](https://8000-cs-331008850888-default.cs-us-east1-dogs.cloudshell.dev/dev-ui/) link in the terminal output.
+
+
+
 
 
 
