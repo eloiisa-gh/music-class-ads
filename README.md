@@ -72,7 +72,7 @@ Output:
 	INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 ```
 
-Clicking the http://127.0.0.1:8000 link, open the ADK Dev UI. 
+Clicking the [http://127.0.0.1:8000](https://8000-cs-331008850888-default.cs-us-east1-dogs.cloudshell.dev/dev-ui/) link, open the ADK Dev UI. 
 From the 'Select an agent' dropdown on the left, select 'illustration_agent' from the dropdown.
 
 
@@ -83,7 +83,29 @@ By supporting each other, we get big things done!
 
 Resulting image:
 
+Use `adk deploy cloud_run` with the `--a2a` flag to deploy your agent to Cloud Run as an A2A server.
+- the `--project` and `--region` define the project and region in which the Cloud Run service will be deployed
+- the `--service_name` defines the name for the Cloud Run service
+- the `--a2a` flag indicates it should be hosted as an A2A agent. This means two things:
+	- your agent will be wrapped by a class which bridges ADK and A2A agents: the A2aAgentExecutor. This class translates A2A Protocol's language of tasks and messages to an ADK Runner in its language of events.
+	- the Agent Card will be hosted as well at CLOUD_RUN_URL/a2a/AGENT_NAME/.well-known/agent.json
 
+Deploy the agent to Cloud Run as an A2A server:
+```
+adk deploy cloud_run \
+    --project YOUR_GCP_PROJECT_ID \
+    --region GCP_LOCATION \
+    --service_name illustration-agent \
+    --a2a \
+    illustration_agent
+```
+Deployment should take about 5-10 minutes.
+```
+Service [illustration-agent] revision [illustration-agent-00001-xpp] has been deployed and is serving 100 percent of traffic.
+Service URL: https://illustration-agent-ProjectNumber.GCP_LOCATION.run.app
+```
+
+4. Enable another ADK agent to call this agent remotely
 
 
 
