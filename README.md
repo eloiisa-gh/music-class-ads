@@ -38,13 +38,6 @@ python3 -m pip install google-adk==1.8.0 a2a-sdk==0.2.16
 sed -i 's/{a2a_option}"/{a2a_option} "/' ~/.local/lib/python3.12/site-packages/google/adk/cli/cli_deploy.py
 ```
 
-Copy the lab code from the Cloud Storage bucket and unzip it:
-```
-gcloud storage cp gs://YOUR_GCP_PROJECT_ID-bucket/adk_and_a2a.zip ./adk_and_a2a.zip
-gcloud storage cp gs://adk-and-a2a-bucket/adk_and_a2a.zip ./adk_and_a2a.zip
-unzip adk_and_a2a.zip
-```
-
 ### 2. Explore the ADK agent you will make available remotely
 Write and .env file to set environment variables needed by ADK agents in `illustration_agent` and in `slide_content_agent`: 
 ```
@@ -75,15 +68,21 @@ Output:
 Clicking the [http://127.0.0.1:8000](https://8000-cs-331008850888-default.cs-us-east1-dogs.cloudshell.dev/dev-ui/) link, open the ADK Dev UI. 
 From the 'Select an agent' dropdown on the left, select 'illustration_agent' from the dropdown.
 
-![illustration agent](https://github.com/eloiisa-gh/adk_and_a2a/blob/main/ADK_and_A2A_img01.png?raw)
+
+<img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/ADK_and_A2A_img01.png?raw" alt="illustration agent" width=75% height=75% />
+
+
 Query the agent with some text that could be used in a recruitment slide deck:
 ```
 By supporting each other, we get big things done!
 ```
 
 Resulting image:
-![illustration agent result](https://github.com/eloiisa-gh/adk_and_a2a/blob/main/ADK_and_A2A_sample_0.png?raw)
 
+<img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/ADK_and_A2A_sample_0.png?raw" alt="illustration agent result" width=40% height=40% />
+
+
+### 3. Deploy the Agent as an A2A Server
 Use `adk deploy cloud_run` with the `--a2a` flag to deploy your agent to Cloud Run as an A2A server.
 - the `--project` and `--region` define the project and region in which the Cloud Run service will be deployed
 - the `--service_name` defines the name for the Cloud Run service
@@ -106,7 +105,7 @@ Service [illustration-agent] revision [illustration-agent-00001-xpp] has been de
 Service URL: https://illustration-agent-ProjectNumber.GCP_LOCATION.run.app
 ```
 
-4. Enable another ADK agent to call this agent remotely
+### 4. Enable another ADK agent to call this agent remotely
 Launch the UI from the Cloud Shell Terminal with:
 ```
 cd ~/adk_and_a2a
@@ -114,12 +113,16 @@ adk web
 ```
 
 Click the [http://127.0.0.1:8000](https://8000-cs-331008850888-default.cs-us-east1-dogs.cloudshell.dev/dev-ui/) link in the terminal output.
+From the 'Select an agent' dropdown on the left, select 'slide_content_agent'. Query the agent with an idea for a slide:
+```
+Create content for a slide about our excellent on-the-job training.
+```
+Output: 
+- a headline and body text written by the slide_content_agent itself 
+- a call to transfer_to_agent, indicating a transfer to the illustration_agent
+- the response from the illustration_agent with a link to the new image.
 
-
-
-
-
-
+<img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/ADK_and_A2A_img02.png?raw" alt="slide content agent result" width=75% height=75% />
 
 </details>
 
