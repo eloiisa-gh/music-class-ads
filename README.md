@@ -39,14 +39,6 @@ sed -i 's/{a2a_option}"/{a2a_option} "/' ~/.local/lib/python3.12/site-packages/g
 ```
 
 ### 2. Explore the ADK agent you will make available remotely
-Write and .env file to set environment variables needed by ADK agents in `illustration_agent` and in `slide_content_agent`: 
-```
-GOOGLE_GENAI_USE_VERTEXAI=TRUE
-GOOGLE_CLOUD_PROJECT=YOUR_GCP_PROJECT_ID
-GOOGLE_CLOUD_LOCATION=GCP_LOCATION
-MODEL="gemini-2.0-flash-001"
-IMAGE_MODEL="imagen-3.0-generate-002"
-```
 
 From the Cloud Shell Terminal, launch the ADK dev UI with:
 ```
