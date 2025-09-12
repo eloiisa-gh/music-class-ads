@@ -28,7 +28,7 @@ gcloud services enable aiplatform.googleapis.com
 gcloud services enable run.googleapis.com
 ```
 
-Download and install the ADK and code samples:
+Download and install the ADK:
 ```
 # Install ADK and the A2A Python SDK
 cd ~
