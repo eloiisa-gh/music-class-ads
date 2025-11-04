@@ -33,6 +33,7 @@ Download and install the ADK:
 cd ~
 export PATH=$PATH:"/home/${USER}/.local/bin"
 python3 -m pip install google-adk==1.8.0 a2a-sdk==0.2.16
+pip install --upgrade google-genai
 # Correcting a typo in this version
 sed -i 's/{a2a_option}"/{a2a_option} "/' ~/.local/lib/python3.12/site-packages/google/adk/cli/cli_deploy.py
 ```
