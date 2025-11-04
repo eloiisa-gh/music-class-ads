@@ -22,10 +22,9 @@ you can deploy the agent once as an agent wrapped with an A2A server, and the ot
 ### 1. Install ADK and set up your environment
 Enable the Vertex AI API and Cloud Run API:
 ```
-gcloud services enable aiplatform.googleapis.com
-```
-```
-gcloud services enable run.googleapis.com
+gcloud services enable \
+  aiplatform.googleapis.com \
+  run.googleapis.com
 ```
 
 Download and install the ADK:
@@ -37,6 +36,11 @@ python3 -m pip install google-adk==1.8.0 a2a-sdk==0.2.16
 # Correcting a typo in this version
 sed -i 's/{a2a_option}"/{a2a_option} "/' ~/.local/lib/python3.12/site-packages/google/adk/cli/cli_deploy.py
 ```
+
+Set up the `.env` files. 
+
+Create a Cloud Storage bucket: 'PROJECT_ID-bucket'.
+
 
 ### 2. Explore the ADK agent you will make available remotely
 
