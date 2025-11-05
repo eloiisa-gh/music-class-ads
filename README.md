@@ -1,11 +1,11 @@
 # Music class ad generation agent 🎼
 
-A company needs an agent for a project to publicize music classes. There is an image generation agent that can create illustrations according to the company's brand guidelines: 
-- a specific illustration style: Pop Art comic strip panel
+A company needs an agent for a project to publicize music classes. There is an image generation agent that can create illustrations according to the company's specific brand guidelines: 
+- a retro illustration style: Pop Art comic strip panel
 - a color palette: bold, saturated, mainly primary colors
 - include musical and teaching imagery
 
-This illustrator agent can then be incorporated by the ad content creator agent.
+This illustrator agent can then be incorporated by the ad content creator agent. With this illustrator agent made a remote agent, it can be shared to be used by other organizations using different programming languages or agent frameworks. 
 
 
 <details>
@@ -22,7 +22,7 @@ gcloud services enable \
   run.googleapis.com
 ```
 
-Download and install ADK:
+Download and install the Agent Development Kit (ADK), and the Agent2Agent (A2A) SDK:
 ```
 # Install ADK and the A2A Python SDK
 cd ~
@@ -77,12 +77,8 @@ Resulting image:
   <summary>3. Deploy the illustration agent as an A2A Server</summary>
 
 ### 3. Deploy the illustration agent as an A2A Server
-Use `adk deploy cloud_run` with the `--a2a` flag to deploy the agent to Cloud Run as an A2A server.
-- `--project` and `--region` : where the Cloud Run service will be deployed
-- the `--service_name` defines the name for the Cloud Run service
-- the `--a2a` flag indicates it should be hosted as an A2A agent.
 
-Deploy the illustration agent to Cloud Run as an A2A server:
+Deploy the agent to Cloud Run as an A2A server: 
 ```
 adk deploy cloud_run \
     --project YOUR_GCP_PROJECT_ID \
