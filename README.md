@@ -40,7 +40,10 @@ Create a Cloud Storage bucket: 'PROJECT_ID-bucket'.
 </details>
 
 
-### 2. Explore the illustrations agent you will make available remotely
+<details open>
+  <summary>2. Explore the illustrations agent</summary>
+
+### 2. Explore the illustrations agent
 
 From the Cloud Shell Terminal, launch the ADK dev UI with:
 ```
@@ -52,28 +55,22 @@ Output:
 	INFO:     Waiting for application startup.
 	+-----------------------------------------------------------------------------+
 	| ADK Web Server started                                                      |
-	|                                                                             |
 	| For local testing, access at http://localhost:8000.                         |
 	+-----------------------------------------------------------------------------+
 	INFO:     Application startup complete.
 	INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 ```
 
-Clicking the [http://127.0.0.1:8000](https://8000-cs-331008850888-default.cs-us-east1-dogs.cloudshell.dev/dev-ui/) link, open the ADK Dev UI. 
-From the 'Select an agent' dropdown on the left, select `illustration_agent` from the dropdown.
+Clicking the [http://127.0.0.1:8000](https://8000-cs-70724c49-cfc8-4e60-b3d7-15a89c90e20e.cs-us-east1-pkhd.cloudshell.dev/dev-ui/) link, open the ADK Dev UI. 
+From the 'Select an agent' dropdown on the left, select `illustration_agent`.
 
-
-<img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/ADK_and_A2A_img01.png?raw" alt="illustration agent" width=75% height=75% />
-
-
-Query the agent with some text that could be used in a recruitment slide deck:
-```
-By supporting each other, we get big things done!
-```
+Query the agent with text related to music classes: `piano and violin`
+<img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/illustration_agent_pianoandviolin.png?raw" alt="illustration agent" width=75% height=75% />
 
 Resulting image:
+<img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/illustration_agent_generated-images_pianoandviolin.png?raw" alt="illustration agent result" width=30% height=30% />
 
-<img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/ADK_and_A2A_sample_0.png?raw" alt="illustration agent result" width=40% height=40% />
+</details>
 
 
 ### 3. Deploy the Agent as an A2A Server
