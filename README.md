@@ -78,7 +78,7 @@ Resulting image:
 
 ### 3. Deploy the illustration agent as an A2A Server
 
-Deploy the agent to Cloud Run as an A2A server: 
+Deploy the agent to Cloud Run as an [A2A server](https://google.github.io/adk-docs/a2a/intro/): 
 ```
 adk deploy cloud_run \
     --project YOUR_GCP_PROJECT_ID \
