@@ -1,4 +1,5 @@
 import os
+# module to generate Universally Unique Identifiers
 import uuid
 from dotenv import load_dotenv
 
@@ -55,6 +56,7 @@ def generate_image(prompt: str) -> dict[str, str]:
     bucket = storage_client.bucket(bucket_name)
     
     # Generate a unique name for the image file
+    # uuid4() creates a random UUID
     blob_name = f"generated-images/{uuid.uuid4()}.png"
     blob = bucket.blob(blob_name)
 
