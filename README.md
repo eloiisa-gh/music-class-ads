@@ -81,7 +81,7 @@ Resulting image:
 Deploy the agent to Cloud Run as an [A2A server](https://google.github.io/adk-docs/a2a/intro/): 
 ```
 adk deploy cloud_run \
-    --project YOUR_GCP_PROJECT_ID \
+    --project GCP_PROJECT_ID \
     --region GCP_LOCATION \
     --service_name illustration-agent \
     --a2a \
@@ -128,3 +128,8 @@ Resulting image:
 </details>
 
 </details>
+
+an example result after updating the style instructions:
+
+<img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/img_docs/generated-images_drumming.png?raw" alt="updated results" width=40% height=40% />
+
