@@ -12,9 +12,9 @@ This illustrator agent can then be incorporated by the ad content creator agent.
   <summary>Instructions</summary>
 
 <details open>
-  <summary>1. Install ADK and set up your environment</summary>
+  <summary>1. Set up your environment</summary>
 
-### 1. Install ADK and set up your environment
+### 1. Set up your environment
 Enable the Vertex AI API and Cloud Run API:
 ```
 gcloud services enable \
@@ -22,7 +22,7 @@ gcloud services enable \
   run.googleapis.com
 ```
 
-Download and install the ADK:
+Download and install ADK:
 ```
 # Install ADK and the A2A Python SDK
 cd ~
@@ -35,7 +35,7 @@ sed -i 's/{a2a_option}"/{a2a_option} "/' ~/.local/lib/python3.12/site-packages/g
 
 Set up the `.env` files. 
 
-Create a Cloud Storage bucket: 'PROJECT_ID-bucket'.
+Create a Cloud Storage bucket: `PROJECT_ID-bucket`.
 
 </details>
 
@@ -45,7 +45,7 @@ Create a Cloud Storage bucket: 'PROJECT_ID-bucket'.
 
 ### 2. Explore the illustrations agent
 
-From the Cloud Shell Terminal, launch the ADK dev UI with:
+From the Cloud Shell Terminal, launch the ADK dev UI:
 ```
 adk web
 ```
@@ -64,7 +64,7 @@ Output:
 Clicking the [http://127.0.0.1:8000](https://8000-cs-70724c49-cfc8-4e60-b3d7-15a89c90e20e.cs-us-east1-pkhd.cloudshell.dev/dev-ui/) link, open the ADK Dev UI. 
 From the 'Select an agent' dropdown on the left, select `illustration_agent`.
 
-Query the agent with text related to music classes: `piano and violin`
+Query the agent with text related to music classes, e.g.: `piano and violin`
 <img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/illustration_agent_pianoandviolin.png?raw" alt="illustration agent" width=75% height=75% />
 
 Resulting image:
@@ -106,7 +106,7 @@ We use this URL for the agent's url in the card (JSON) files.
 
 ### 4. Enable another agent to call the illustration agent remotely
 
-This second agent creates content for ads. It writes a headline and a couple of sentences of body text, then transfer to the illustration agent to generate an image to illustrate that text.
+This second agent creates content for ads. It writes a headline and a couple of sentences of body text, then transfers to the illustration agent to generate an image to illustrate that text.
 
 Launch the UI from the Cloud Shell Terminal:
 ```
@@ -119,9 +119,9 @@ From the 'Select an agent' dropdown on the left, select `ad_content_agent`. Quer
 Create content for an ad about singing classes for beginners
 ```
 Output: 
-- a headline and body text written by the ad_content_agent
-- a call to transfer_to_agent, indicating a transfer to the illustration_agent
-- the response from the illustration_agent with a link to the new image.
+- a headline and body text written by the `ad_content_agent`
+- a call to `transfer_to_agent`, indicating a transfer to the `illustration_agent`
+- the response from the `illustration_agent` with a link to the new image.
 
 Verify that `ad_content_agent` is using `illustration_agent` as a sub-agent: 
 <img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/ad_content_agent_singingbeginners.png?raw" alt="ad agent" width=75% height=75% />
