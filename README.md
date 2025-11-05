@@ -5,7 +5,7 @@ A company needs an agent for a project to publicize music classes. There is an i
 - a color palette: bold, saturated, mainly primary colors
 - include musical and teaching imagery
 
-This illustrator agent can then be incorporated by the ad content creator agent. With this illustrator agent made a remote agent, it can be shared to be used by other organizations using different programming languages or agent frameworks. 
+With this illustrator agent made a remote agent, it can be shared to be used by other organizations using different programming languages or agent frameworks. This illustrator agent can then be incorporated by an ad content creator agent.
 
 
 <details>
