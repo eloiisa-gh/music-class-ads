@@ -1,6 +1,6 @@
 # Music class ad generation agent 🎼
 
-An imaginary company needs an agent for a project to publicize music classes. There is an image generation agent that can create illustrations according to the company's brand guidelines: 
+A company needs an agent for a project to publicize music classes. There is an image generation agent that can create illustrations according to the company's brand guidelines: 
 - a specific illustration style: Pop Art comic strip panel
 - a color palette: bold, saturated, mainly primary colors
 - include musical and teaching imagery
@@ -74,15 +74,15 @@ Resulting image:
 
 
 <details open>
-  <summary>3. Deploy the Agent as an A2A Server</summary>
+  <summary>3. Deploy the illustration agent as an A2A Server</summary>
 
-### 3. Deploy the Agent as an A2A Server
+### 3. Deploy the illustration agent as an A2A Server
 Use `adk deploy cloud_run` with the `--a2a` flag to deploy the agent to Cloud Run as an A2A server.
 - `--project` and `--region` : where the Cloud Run service will be deployed
 - the `--service_name` defines the name for the Cloud Run service
 - the `--a2a` flag indicates it should be hosted as an A2A agent.
 
-Deploy the agent to Cloud Run as an A2A server:
+Deploy the illustration agent to Cloud Run as an A2A server:
 ```
 adk deploy cloud_run \
     --project YOUR_GCP_PROJECT_ID \
@@ -91,7 +91,7 @@ adk deploy cloud_run \
     --a2a \
     illustration_agent
 ```
-Deployment should take about 5-10 minutes.
+Output: 
 ```
 Service [illustration-agent] revision [illustration-agent-00001-xpp] has been deployed and is serving 100 percent of traffic.
 Service URL: https://illustration-agent-ProjectNumber.GCP_LOCATION.run.app
@@ -123,6 +123,7 @@ Output:
 - a call to transfer_to_agent, indicating a transfer to the illustration_agent
 - the response from the illustration_agent with a link to the new image.
 
+Verify that `ad_content_agent` is using `illustration_agent` as a sub-agent: 
 <img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/ad_content_agent_singingbeginners.png?raw" alt="ad agent" width=75% height=75% />
 
 Resulting image:
