@@ -7,6 +7,7 @@ A company needs an agent for a project to publicize music classes. There is an i
 
 With this illustrator agent made a remote agent, it can be shared to be used by other organizations using different programming languages or agent frameworks. This illustrator agent can then be incorporated by an ad content creator agent.
 
+Models used: `gemini-2.5-flash` and `gemini-2.5-flash-image`
 
 <details>
   <summary>Instructions</summary>
@@ -32,8 +33,9 @@ pip install --upgrade google-genai
 # Correcting a typo in this version
 sed -i 's/{a2a_option}"/{a2a_option} "/' ~/.local/lib/python3.12/site-packages/google/adk/cli/cli_deploy.py
 ```
+Based on: [Connect to remote agents with ADK and the Agent2Agent (A2A) SDK](https://www.cloudskillsboost.google/focuses/132170?parent=catalog)
 
-Set up the `.env` files. 
+Set up the `.env` files.
 
 Create a Cloud Storage bucket: `PROJECT_ID-bucket`.
 
