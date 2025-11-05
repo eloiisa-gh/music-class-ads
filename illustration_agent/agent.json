@@ -1,6 +1,6 @@
 {
     "name": "illustration_agent",
-    "description": "An agent designed to generate branded illustrations for Cymbal Stadiums.",
+    "description": "An agent designed to generate branded illustrations for music classes ads.",
     "defaultInputModes": ["text/plain"],
     "defaultOutputModes": ["application/json"],
     "skills": [

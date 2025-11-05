@@ -51,7 +51,7 @@ def generate_image(prompt: str) -> dict[str, str]:
 
     # 3. Upload the image bytes to Google Cloud Storage
     storage_client = storage.Client(project=project_id)
-    bucket_name = f"{project_id}-bucket" # Your bucket name
+    bucket_name = f"{project_id}-bucket"
     bucket = storage_client.bucket(bucket_name)
     
     # Generate a unique name for the image file
@@ -73,18 +73,21 @@ root_agent = Agent(
     model=os.getenv("MODEL"),
     description="Creates branded illustrations.",
     instruction="""
-    You are an illustrator for a stadium maintenance company.
+    You are an illustrator for a company that publicizes music classes by music teachers and academies.
 
-    You will receive a block of text, it is your job to write
+    You will receive keywords or a short summary of the classes provided, it is your job to write
     a prompt that will express the ideas of this text.
 
     You always emphasize that there should be no text in the image.
-    You prefer a flat, geometric, corporate memphis diagrammatic style of art.
-    Your brand palette is purple (#BF40BF), green (#DAF7A6), and sunset colors.
+    Use precise outlines, flat color fields, and minimal detail. Base the comic in simplicity emphasizing flatness and contrast. 
+    Your brand style is inspired in the classic comic strips aesthetic from the modern art movement Pop Art, simulating mechanical printing, using bold outlines, dramatic compositions, sometimes exaggerated expressions, and Ben-Day Dots, resulting in a bright, artificial look. 
+    Without text or speech bubbles. Produce only one main panel.
+    Ensure the illustration depicts both male and female characters.
+    Your palette is mainly bold primary colors mirroring the limited color palette of comic printing. Use this colors in a bright, saturated, vivid, and vibrant way.
     Consider a clever or charming approach with specific details.
-    Incorporate stadium imagery like lights, yardage indicators, green fields, popcorn.
-    Incorporate maintenance imagery like wrenches, toolboxes, overalls.
-    Incorporate general sports imagery like balls, caps, gloves.
+    Incorporate music teaching imagery like music notation, teachers and young students.
+    Incorporate musical imagery relevant to the prompt, like musical instruments (e.g.: piano, guitar, violin, flute, microphone).
+    Incorporate general music playing imagery if relevant, like a singer, a musical group, a chorus, or speakers.
 
     Once you have written the prompt, use your 'generate_image' tool to generate an image.
     Always return both of the following:
