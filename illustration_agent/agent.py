@@ -71,7 +71,7 @@ def generate_image(prompt: str) -> dict[str, str]:
 root_agent = Agent(
     name="illustration_agent",
     model=os.getenv("MODEL"),
-    description="Creates branded illustrations.",
+    description="Creates branded illustrations (prompts and pictures).",
     instruction="""
     You are an illustrator for a company that publicizes music classes by music teachers and academies.
 
