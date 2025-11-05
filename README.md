@@ -73,13 +73,14 @@ Resulting image:
 </details>
 
 
+<details open>
+  <summary>3. Deploy the Agent as an A2A Server</summary>
+
 ### 3. Deploy the Agent as an A2A Server
-Use `adk deploy cloud_run` with the `--a2a` flag to deploy your agent to Cloud Run as an A2A server.
-- the `--project` and `--region` define the project and region in which the Cloud Run service will be deployed
+Use `adk deploy cloud_run` with the `--a2a` flag to deploy the agent to Cloud Run as an A2A server.
+- `--project` and `--region` : where the Cloud Run service will be deployed
 - the `--service_name` defines the name for the Cloud Run service
-- the `--a2a` flag indicates it should be hosted as an A2A agent. This means two things:
-	- your agent will be wrapped by a class which bridges ADK and A2A agents: the A2aAgentExecutor. This class translates A2A Protocol's language of tasks and messages to an ADK Runner in its language of events.
-	- the Agent Card will be hosted as well at CLOUD_RUN_URL/a2a/AGENT_NAME/.well-known/agent.json
+- the `--a2a` flag indicates it should be hosted as an A2A agent.
 
 Deploy the agent to Cloud Run as an A2A server:
 ```
@@ -95,21 +96,27 @@ Deployment should take about 5-10 minutes.
 Service [illustration-agent] revision [illustration-agent-00001-xpp] has been deployed and is serving 100 percent of traffic.
 Service URL: https://illustration-agent-ProjectNumber.GCP_LOCATION.run.app
 ```
+We use this URL for the agent's url in the card (JSON) files.
 
-### 4. Enable another ADK agent to call this agent remotely
+</details>
+
+
+### 4. Enable another agent to call the illustration agent remotely
+
+This second agent will be an agent tasked with creating content for ads. It writes a headline and a couple of sentences of body text, then transfer to the illustration agent to generate an image to illustrate that text.
+
 Launch the UI from the Cloud Shell Terminal with:
 ```
 cd ~/adk_and_a2a
 adk web
 ```
 
-Click the [http://127.0.0.1:8000](https://8000-cs-331008850888-default.cs-us-east1-dogs.cloudshell.dev/dev-ui/) link in the terminal output.
-From the 'Select an agent' dropdown on the left, select 'slide_content_agent'. Query the agent with an idea for a slide:
+From the 'Select an agent' dropdown on the left, select `ad_content_agent`. Query the agent with an idea for an ad:
 ```
-Create content for a slide about our excellent on-the-job training.
+Create content for an ad about drumming classes for beginners
 ```
 Output: 
-- a headline and body text written by the slide_content_agent itself 
+- a headline and body text written by the ad_content_agent
 - a call to transfer_to_agent, indicating a transfer to the illustration_agent
 - the response from the illustration_agent with a link to the new image.
 
