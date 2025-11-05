@@ -1,23 +1,18 @@
-# ADK and A2A
-Connect to remote agents with ADK and the Agent2Agent (A2A) SDK
+# Music class ad generation agent 🎼
 
-Imagine you work for a stadium maintenance company: 'Cymbal Stadiums'. There is an image generation-agent that can create illustrations according to brand guidelines: 
-- a specific illustration style: (Corporate Memphis / [Alegria](https://buck.co/work/facebook-alegria) art)
-- a color palette (purples and greens on sunset gradients)
-- examples of stadium/sports and maintenance imagery because it is a stadium maintenance company
+An imaginary company needs an agent for a project to publicize music classes. There is an image generation agent that can create illustrations according to the company's brand guidelines: 
+- a specific illustration style: Pop Art comic strip panel
+- a color palette: bold, saturated, mainly primary colors
+- include musical and teaching imagery
 
-Now, several different teams in the organization want to use it too.
-you can deploy the agent once as an agent wrapped with an A2A server, and the other teams' agents can incorporate it by querying it remotely.
-
-
-### Objective
-- Deploy an ADK agent as an A2A Server
-- Prepare a JSON Agent Card to describe an A2A agent's capabilities
-- Enable another ADK agent to read the Agent Card of your deployed A2A agent and use it as a sub-agent
+This illustrator agent can then be incorporated by the ad content creator agent.
 
 
 <details>
   <summary>Instructions</summary>
+
+<details open>
+  <summary>1. Install ADK and set up your environment</summary>
 
 ### 1. Install ADK and set up your environment
 Enable the Vertex AI API and Cloud Run API:
@@ -42,8 +37,10 @@ Set up the `.env` files.
 
 Create a Cloud Storage bucket: 'PROJECT_ID-bucket'.
 
+</details>
 
-### 2. Explore the ADK agent you will make available remotely
+
+### 2. Explore the illustrations agent you will make available remotely
 
 From the Cloud Shell Terminal, launch the ADK dev UI with:
 ```
@@ -63,7 +60,7 @@ Output:
 ```
 
 Clicking the [http://127.0.0.1:8000](https://8000-cs-331008850888-default.cs-us-east1-dogs.cloudshell.dev/dev-ui/) link, open the ADK Dev UI. 
-From the 'Select an agent' dropdown on the left, select 'illustration_agent' from the dropdown.
+From the 'Select an agent' dropdown on the left, select `illustration_agent` from the dropdown.
 
 
 <img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/ADK_and_A2A_img01.png?raw" alt="illustration agent" width=75% height=75% />
@@ -122,4 +119,3 @@ Output:
 <img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/ADK_and_A2A_img02.png?raw" alt="slide content agent result" width=75% height=75% />
 
 </details>
-
