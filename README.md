@@ -65,10 +65,10 @@ Clicking the [http://127.0.0.1:8000](https://8000-cs-70724c49-cfc8-4e60-b3d7-15a
 From the 'Select an agent' dropdown on the left, select `illustration_agent`.
 
 Query the agent with text related to music classes, e.g.: `piano and violin`
-<img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/illustration_agent_pianoandviolin.png?raw" alt="illustration agent" width=75% height=75% />
+<img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/img_docs/illustration_agent_pianoandviolin.png?raw" alt="illustration agent" width=75% height=75% />
 
 Resulting image:
-<img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/illustration_agent_generated-images_pianoandviolin.png?raw" alt="illustration agent result" width=30% height=30% />
+<img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/img_docs/illustration_agent_generated-images_pianoandviolin.png?raw" alt="illustration agent result" width=25% height=25% />
 
 </details>
 
@@ -120,10 +120,10 @@ Output:
 - the response from the `illustration_agent` with a link to the new image.
 
 Verify that `ad_content_agent` is using `illustration_agent` as a sub-agent: 
-<img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/ad_content_agent_singingbeginners.png?raw" alt="ad agent" width=75% height=75% />
+<img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/img_docs/ad_content_agent_singingbeginners.png?raw" alt="ad agent" width=75% height=75% />
 
 Resulting image:
-<img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/ad_content_agent_generated-images_singingbeginners.png?raw" alt="ad agent result" width=30% height=30% />
+<img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/img_docs/ad_content_agent_generated-images_singingbeginners.png?raw" alt="ad agent result" width=25% height=25% />
 
 </details>
 
