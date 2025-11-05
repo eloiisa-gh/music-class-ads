@@ -101,11 +101,14 @@ We use this URL for the agent's url in the card (JSON) files.
 </details>
 
 
+<details open>
+  <summary>4. Enable another agent to call the illustration agent remotely</summary>
+
 ### 4. Enable another agent to call the illustration agent remotely
 
-This second agent will be an agent tasked with creating content for ads. It writes a headline and a couple of sentences of body text, then transfer to the illustration agent to generate an image to illustrate that text.
+This second agent creates content for ads. It writes a headline and a couple of sentences of body text, then transfer to the illustration agent to generate an image to illustrate that text.
 
-Launch the UI from the Cloud Shell Terminal with:
+Launch the UI from the Cloud Shell Terminal:
 ```
 cd ~/adk_and_a2a
 adk web
@@ -113,13 +116,18 @@ adk web
 
 From the 'Select an agent' dropdown on the left, select `ad_content_agent`. Query the agent with an idea for an ad:
 ```
-Create content for an ad about drumming classes for beginners
+Create content for an ad about singing classes for beginners
 ```
 Output: 
 - a headline and body text written by the ad_content_agent
 - a call to transfer_to_agent, indicating a transfer to the illustration_agent
 - the response from the illustration_agent with a link to the new image.
 
-<img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/ADK_and_A2A_img02.png?raw" alt="slide content agent result" width=75% height=75% />
+<img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/ad_content_agent_singingbeginners.png?raw" alt="ad agent" width=75% height=75% />
+
+Resulting image:
+<img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/ad_content_agent_generated-images_singingbeginners.png?raw" alt="ad agent result" width=30% height=30% />
+
+</details>
 
 </details>
