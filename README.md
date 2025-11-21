@@ -23,6 +23,15 @@ gcloud services enable \
   run.googleapis.com
 ```
 
+```
+gcloud services list --enabled
+	NAME: run.googleapis.com
+		TITLE: Cloud Run Admin API
+	NAME: aiplatform.googleapis.com
+		TITLE: Vertex AI API
+	...
+```
+
 Download and install the Agent Development Kit (ADK), and the Agent2Agent (A2A) SDK:
 ```
 # Install ADK and the A2A Python SDK
@@ -37,7 +46,15 @@ Based on: [Connect to remote agents with ADK and the Agent2Agent (A2A) SDK](http
 
 Set up the `.env` files.
 
-Create a Cloud Storage bucket: `PROJECT_ID-bucket`.
+Create a Cloud Storage bucket named `PROJECT_ID-bucket`.
+```
+gcloud storage buckets create gs://PROJECT_ID-bucket --location=BUCKET_LOCATION --project=PROJECT_ID --no-public-access-prevention
+```
+
+Make all objects in the bucket publicly readable. To make all objects in a bucket readable to everyone on the public internet, grant the principal `allUsers` the `Storage Object Viewer` (`roles/storage.objectViewer`) role:
+```
+gcloud storage buckets add-iam-policy-binding gs://BUCKET_NAME --member=allUsers --role=roles/storage.objectViewer
+```
 
 </details>
 
@@ -108,7 +125,7 @@ This second agent creates content for ads. It writes a headline and a couple of 
 
 Launch the UI from the Cloud Shell Terminal:
 ```
-cd ~/adk_and_a2a
+cd ~/music-class-ads
 adk web
 ```
 
