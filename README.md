@@ -111,6 +111,8 @@ Output:
 Service [illustration-agent] revision [illustration-agent-00001-xpp] has been deployed and is serving 100 percent of traffic.
 Service URL: https://illustration-agent-ProjectNumber.GCP_LOCATION.run.app
 ```
+https://illustration-agent-485230244166.us-central1.run.app/
+
 We use this URL for the agent's url in the card (JSON) files.
 
 </details>
@@ -152,3 +154,4 @@ an example result after updating the style instructions:
 
 <img src="https://github.com/eloiisa-gh/adk_and_a2a/blob/main/img_docs/generated-images_drumming.png?raw" alt="updated results" width=40% height=40% />
 
+Try it yourself: https://ad-content-agent-485230244166.us-central1.run.app
